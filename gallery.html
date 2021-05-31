@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="this is a football website">
+        <title>SOCCER TOPS</title>
+        <link rel="stylesheet" href="ball.css">
+     </head>
+    <body>
+        <header>
+            <nav>
+                <ul>      
+                  <li><a href="index.html">HOME</a></li>
+                  <li><a href="news.html">NEWS</a></li>
+                  <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </nav>
+            <h1>SOCCER TOPS</h1>
+        </header>
+    <body>
+        <header>
+            <div id="randomGallery">
+                <form>
+                    <label for="width">width</label><br>
+                        <input type="number" min="300" max="1000" id="width"><br>
+                    <label for="height">height</label><br>
+                        <input type="number" min="300" max="450" id="height"><br>
+                    <label for="border">border</label><br>
+                        <input type="number" min="1" max="20" id="border"><br>
+                    <label for="t_alt">alt text</label><br>
+                        <input type="text" size="20" id="alt"><br><br>
+                    <input type=button value="Сменить картинку" onclick="change()"> 
+                </form>
+                <div id="rand">
+                    <img id=myimg src="../Desktop/ronaldo.jpg" alt="nature">
+                </div>
+            </div>
+        <script type="text/javascript">
+            var arr=new Array["../Desktop/ronaldo.jpg"]; 
+            
+            //Изменение ширины изображения
+            width.onchange = function(){
+                myimg.style.width = this.value + "px";
+            }
+            
+            //Изменение высоты изображения
+            height.onchange = function(){
+                myimg.style.height = this.value + "px";
+            }
+            
+            //Изменение толщины рамки изображения
+            border.onchange = function(){
+                img = document.getElementById("myimg");
+                img.border=border.value;
+                img.style.borderColor="#228B22";
+            }
+            
+            //Изменение альтернативного текста
+            alt.onchange = function(){
+                img = document.getElementById("myimg");
+                img.alt=alt.value;
+            }
+
+            //Случайная смена изображения
+            function change(){
+                var r=Math.floor(Math.random()*arr.length);
+                document.getElementById("myimg").src=arr[r];   
+            }
+        </script>
+      </body>
+</html>
+
+    
+    
+                                        
+                    
+
